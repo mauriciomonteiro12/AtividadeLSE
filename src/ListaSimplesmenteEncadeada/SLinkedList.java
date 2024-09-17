@@ -34,16 +34,15 @@ public class SLinkedList {
         Node newNode = new Node(data);
         if (tail == null) {
             head = newNode;
-            tail = newNode;
         } else {
             tail.next = newNode;
-            tail = newNode;
         }
+        tail = newNode;
     }
 
     public void removeFirst() throws EmptySLinkedList {
         if (head == null) {
-            throw new EmptySLinkedList("A lista está vazia.");
+            throw new EmptySLinkedList();
         }
         head = head.next;
         if (head == null) {
